@@ -18,7 +18,7 @@ class CartController extends Controller
     public function index()
     {
         $mightAlsoLike = Product::MightAlsoLike()->get();
-        return view('cart', compact('mightAlsoLike', ));
+        return view('cart', compact('mightAlsoLike'));
     }
 
     /**
