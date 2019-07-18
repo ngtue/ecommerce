@@ -35,11 +35,11 @@
                 @foreach (Cart::content() as $item)
                 <div class="flex py-8">
                     <div class="w-1/6">
-                        <a href="{{ route('shop.show', $item->model) }}"><img
+                        <a href="{{ route('shop.show', $item->model->slug) }}"><img
                                 src="/img/products/{{ $item->model->slug }}.jpg" alt="item"></a>
                     </div>
                     <div class="w-1/3">
-                        <a href="{{ route('shop.show', $item->model) }}"
+                        <a href="{{ route('shop.show', $item->model->slug) }}"
                             class="text-xl font-semibold">{{ $item->model->name }}</a>
                         <p>{{ $item->model->details }}</p>
                     </div>
@@ -137,11 +137,11 @@
                 @foreach (Cart::instance('saveForLater')->content() as $item)
                 <div class="flex py-8">
                     <div class="w-1/6">
-                        <a href="{{ route('shop.show', $item->model) }}"><img
+                        <a href="{{ route('shop.show', $item->model->slug) }}"><img
                                 src="/img/products/{{ $item->model->slug }}.jpg" alt="item"></a>
                     </div>
                     <div class="w-1/3">
-                        <a href="{{ route('shop.show', $item->model) }}">{{ $item->model->name }}</a>
+                        <a href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->name }}</a>
                         <p>{{ $item->model->details }}</p>
                     </div>
                     <div class="w-1/6 py-8 text-center">
