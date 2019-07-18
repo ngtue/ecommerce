@@ -34,9 +34,9 @@
         <div class="products md:flex md:flex-wrap py-10 text-center ">
             @forelse ($products as $product)
             <div class="product md:w-1/2 lg:w-1/3 my-4">
-                <a href="{{ route('shop.show', $product->id) }}"><img class="mx-auto"
+                <a href="{{ route('shop.show', $product->slug) }}"><img class="mx-auto"
                         src="/img/products/{{ $product->slug }}.jpg" alt="product"></a>
-                <a href="{{ route('shop.show',$product->id) }}"
+                <a href="{{ route('shop.show',$product->slug) }}"
                     class="font-semibold">{{ $product->name }}</a>
                 <p>{{ $product->presentPrice() }}</p>
             </div>

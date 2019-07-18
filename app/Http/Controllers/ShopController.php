@@ -67,9 +67,10 @@ class ShopController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($slug)
     {
-        $mightAlsoLike = Product::where('product', '!=', $product)->MightAlsoLike()->get();
+        $product = Product::where('slug', $slug)->firstOrFail();
+        $mightAlsoLike = Product::where('slug', '!=', $slug)->mightAlsoLike()->get();
         return view('product', compact('product', 'mightAlsoLike'));
     }
 
